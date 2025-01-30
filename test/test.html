@@ -16,7 +16,6 @@
       margin: 0;
       padding: 0;
       background-color: #fff8e1;
-      /* 暖色系 */
     }
   </style>
   <header>
@@ -38,7 +37,6 @@
 
   <main>
     <style>
-      /* 全体的な画像のレスポンシブ対応 */
       body {
         text-align: center;
       }
@@ -46,7 +44,6 @@
       #slider {
         overflow: hidden;
         width: 100%;
-        /* スライダーの幅を100%に設定 */
         margin: 10px auto;
         padding: 0px;
       }
@@ -56,69 +53,47 @@
         margin: 0;
         padding: 0;
         width: 300%;
-        /* 3枚分並べる */
         display: flex;
         transition: transform 1s ease;
-        /* アニメーションでスライド */
       }
 
       #photos li {
         width: 100%;
-        /* 1枚ずつ表示 */
         height: 600px;
-        /* 高さを固定 */
         display: block;
-        /* 画像の表示をブロック要素に */
       }
 
       #photos li img {
         width: 100%;
-        /* 画像が親要素に合わせてリサイズ */
         height: 100%;
-        /* 高さも親要素に合わせてリサイズ */
         object-fit: cover;
-        /* 画像が枠に合わせて収まるように */
         object-position: center;
-        /* 画像を中央に配置 */
       }
 
-      /* モバイル用（最大幅560px） */
       @media screen and (max-width: 560px) {
         #slider {
           height: 300px;
-          /* スマホ用にスライダーの高さを調整 */
+          /* スマホ用 */
         }
 
         #photos li {
           height: 300px;
-          /* スライダーの高さを合わせる */
         }
       }
 
-      /* タブレット・PC用（960px以上） */
       @media screen and (min-width: 960px) {
         #slider {
-          height: 600px;
-          /* 高解像度に合わせてスライダーの高さを調整 */
+          height: 800px;
+          /* PC用 */
         }
 
         #photos li {
-          height: 600px;
-          /* スライダーの高さを合わせる */
+          height: 800px;
         }
       }
     </style>
 
     <body>
-
-      <picture>
-        <!-- スマホ用画像 (最大幅560px) -->
-        <source media="(max-width: 560px)" srcset="img/spimg.png">
-        <!-- 中程度の解像度（最大幅960px）の画像 -->
-        <source media="(max-width: 960px)" srcset="img/mdimg.png">
-        <!-- PC用画像 -->
-        <img src="img/pcimg.png" alt="画像">
-      </picture>
 
       <div id="slider">
         <ul id="photos">
@@ -127,6 +102,7 @@
           <li><img src="店舗写真/店舗写真/kohitei3.jpg" alt="Sample3"></li>
         </ul>
       </div>
+
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script>
