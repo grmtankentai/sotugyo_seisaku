@@ -38,6 +38,7 @@
 
   <main>
     <style>
+      /* 全体的な画像のレスポンシブ対応 */
       body {
         text-align: center;
       }
@@ -57,7 +58,6 @@
         width: 300%;
         /* 3枚分並べる */
         display: flex;
-        /* 横並びにする */
         transition: transform 1s ease;
         /* アニメーションでスライド */
       }
@@ -73,14 +73,52 @@
 
       #photos li img {
         width: 100%;
+        /* 画像が親要素に合わせてリサイズ */
         height: 100%;
-        /* 表示領域に収める */
+        /* 高さも親要素に合わせてリサイズ */
+        object-fit: cover;
+        /* 画像が枠に合わせて収まるように */
         object-position: center;
-        /* 画像を中央配置 */
+        /* 画像を中央に配置 */
+      }
+
+      /* モバイル用（最大幅560px） */
+      @media screen and (max-width: 560px) {
+        #slider {
+          height: 300px;
+          /* スマホ用にスライダーの高さを調整 */
+        }
+
+        #photos li {
+          height: 300px;
+          /* スライダーの高さを合わせる */
+        }
+      }
+
+      /* タブレット・PC用（960px以上） */
+      @media screen and (min-width: 960px) {
+        #slider {
+          height: 600px;
+          /* 高解像度に合わせてスライダーの高さを調整 */
+        }
+
+        #photos li {
+          height: 600px;
+          /* スライダーの高さを合わせる */
+        }
       }
     </style>
 
     <body>
+
+      <picture>
+        <!-- スマホ用画像 (最大幅560px) -->
+        <source media="(max-width: 560px)" srcset="img/spimg.png">
+        <!-- 中程度の解像度（最大幅960px）の画像 -->
+        <source media="(max-width: 960px)" srcset="img/mdimg.png">
+        <!-- PC用画像 -->
+        <img src="img/pcimg.png" alt="画像">
+      </picture>
 
       <div id="slider">
         <ul id="photos">
@@ -323,8 +361,7 @@
         <h3><strong>塩そば専門店 桑ばら</strong></h3>
         <br />
         <p><strong>住所</strong>: 東京都豊島区南池袋1-27-2</p>
-        <p><strong>マップ</strong>: <strong><a href="//maps.app.goo.gl/ng7EpmdXecBbmncGA"
-              target="_blank">Googleマップ</a></strong></p>
+        <p><strong>マップ</strong>: <strong><a href="https://x.gd/jjWSc" target="_blank">Googleマップ</a></strong></p>
         <p><strong>アクセス</strong>: 各線&nbsp;池袋東口から徒歩1分</p>
         <p><strong>電話番号</strong>: 03-3985-6729</p>
         <p><strong>定休日</strong>: 月曜日</p>
@@ -332,7 +369,7 @@
         <p><strong>予算</strong>: 1,000～2,000円</p>
         <p><strong>キャッシュレス決済</strong>: 不可（支払いは現金のみ）</p>
         <p><strong>禁煙・喫煙</strong>: 全席禁煙</p>
-        <p><strong>予約サイト・口コミ・クーポン</strong>: <strong><a href="https://tabelog.com/tokyo/A1305/A130501/13017017/"
+        <p><strong>予約サイト・口コミ・クーポン</strong>: <strong><a href="https://tabelog.com/tokyo/A1305/A130501/13022925/"
               target="_blank">食べログ</a></strong></p>
         <p>
           <iframe frameborder="0" height="300"
